@@ -4,7 +4,8 @@
   "description": "population management system listing the population of various locations",
   "main": "app.js",
   "scripts": {
-    "test": "jest test"
+    "test": "jest test",
+    "build": "babel server -d dist"
   },
   "repository": {
     "type": "git",
@@ -23,10 +24,16 @@
   },
   "homepage": "https://github.com/paradisekelechi/PopulationManagementSystem#readme",
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
     "eslint": "^5.11.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1"
+  },
+  "dependencies": {
+    "express": "^4.16.4"
   }
 }
