@@ -1,0 +1,25 @@
+{
+  "name": "populationmanagementsystem",
+  "version": "1.0.0",
+  "description": "population management system listing the population of various locations",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paradisekelechi/PopulationManagementSystem.git"
+  },
+  "keywords": [
+    "population",
+    "location",
+    "management",
+    "system"
+  ],
+  "author": "Paradise Kelechi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/paradisekelechi/PopulationManagementSystem/issues"
+  },
+  "homepage": "https://github.com/paradisekelechi/PopulationManagementSystem#readme"
+}
