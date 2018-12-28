@@ -17,3 +17,5 @@ app.get('*', (req, res) => {
 app.listen(port, () => {
   Logger('info', `Population management application started and running on port ${port}`);
 });
+
+export default app;

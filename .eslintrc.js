@@ -1,3 +1,9 @@
 module.exports = {
-  "extends": "airbnb"
+  "extends": "airbnb",
+  "globals": {
+    "describe": true,
+    "beforeEach": true,
+    "it": true,
+    "before": true,
+  }
 };
