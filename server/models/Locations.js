@@ -11,11 +11,12 @@ export default (sequelize, DataTypes) => {
       },
       male: {
         type: DataTypes.INTEGER,
-        notNull: true,
       },
       female: {
         type: DataTypes.INTEGER,
-        notNull: true,
+      },
+      total: {
+        type: DataTypes.INTEGER,
       },
       deleted: {
         type: DataTypes.BOOLEAN,
@@ -31,6 +32,10 @@ export default (sequelize, DataTypes) => {
       freezeTableName: true,
     },
   );
+
+  Locations.associate = (models) => {
+    Locations.belongsTo(models.Locations, { as: 'ParentLocationId' });
+  };
 
   return Locations;
 };

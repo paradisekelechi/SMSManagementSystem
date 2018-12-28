@@ -6,7 +6,7 @@ export default {
   development: {
     username: process.env.DB_USERNAME_DEV,
     password: process.env.DB_PASSWORD_DEV,
-    database: 'hair',
+    database: 'population',
     host: '127.0.0.1',
     port: 5432,
     dialect: 'postgres',
