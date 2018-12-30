@@ -87,4 +87,20 @@ describe('Location test', () => {
         });
     });
   });
+  describe('/PUT Locations', () => {
+    it('should edit a location', (done) => {
+      chai.request(server)
+        .put('/api/locations/1')
+        .set('content-type', 'application/x-www-form-urlencoded')
+        .send({
+          male: 10, female: 12, ParentIdLocation: 1,
+        })
+        .end((err, res) => {
+          expect(res).to.be.ok();
+          expect(res.status).to.be.eql(200);
+          expect(res.body.message).to.be.eql('Location updated successfully');
+          done();
+        });
+    });
+  });
 });

@@ -15,9 +15,6 @@ export default (sequelize, DataTypes) => {
       female: {
         type: DataTypes.INTEGER,
       },
-      total: {
-        type: DataTypes.INTEGER,
-      },
       deleted: {
         type: DataTypes.BOOLEAN,
       },
