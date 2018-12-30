@@ -1,6 +1,6 @@
 import express from 'express';
 import {
-  getLocations, addLocation,
+  getLocations, addLocation, editLocation,
 } from '../controllers/locations';
 
 const router = express.Router();
@@ -11,6 +11,11 @@ router.route('/')
   })
   .post((req, res) => {
     addLocation(req, res);
+  });
+
+router.route('/:id')
+  .put((req, res) => {
+    editLocation(req, res);
   });
 
 export default router;

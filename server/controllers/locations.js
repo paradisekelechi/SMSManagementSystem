@@ -27,13 +27,32 @@ export const addLocation = (req, res) => {
   if (female) {
     femaleCount = female;
   }
-  const totalCount = +maleCount + +femaleCount;
   if (!name) {
     return plainResponse(req, res, 400, 'Location name is required', false);
   }
 
   return Locations.create({
-    name, male: maleCount, female: femaleCount, total: totalCount, ParentLocationId: parent,
+    name, male: maleCount, female: femaleCount, ParentLocationId: parent,
   })
     .then(location => payloadResponse(req, res, 200, 'Location added successfully', true, location, 'location'));
+};
+
+export const editLocation = (req, res) => {
+  const { id } = req.params;
+  const {
+    male, female, parent,
+  } = req.body;
+  const payload = {};
+  if (male) {
+    payload.male = db.sequelize.literal(`male - ${male}`);
+  }
+  if (female) {
+    payload.female = db.sequelize.literal(`female - ${female}`);
+  }
+  if (parent) {
+    payload.ParentLocationId = parent;
+  }
+
+  return Locations.update(payload, { where: { id } })
+    .then(location => payloadResponse(req, res, 200, 'Location updated successfully', true, location, 'location'));
 };
