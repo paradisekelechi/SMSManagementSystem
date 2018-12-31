@@ -7,8 +7,6 @@ import db from '../server/models';
 
 const { Locations } = db;
 dotenv.config();
-
-
 chai.use(chaiHttp);
 
 describe('Location test', () => {

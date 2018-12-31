@@ -8,6 +8,7 @@ export default (sequelize, DataTypes) => {
           args: false,
           msg: 'Location name is required',
         },
+        unique: true,
       },
       male: {
         type: DataTypes.INTEGER,

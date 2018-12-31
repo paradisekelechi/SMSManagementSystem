@@ -2,6 +2,7 @@ import dotenv from 'dotenv';
 import express from 'express';
 import bodyParser from 'body-parser';
 import location from './locations';
+import population from './population';
 
 dotenv.config();
 
@@ -30,5 +31,6 @@ app
   });
 
 app.use('/api/locations', location);
+app.use('/api/population', population);
 
 export default app;
