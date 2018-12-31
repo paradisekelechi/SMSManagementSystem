@@ -3,7 +3,7 @@ import { payloadResponse, plainResponse } from '../utils/response';
 
 const { Locations } = db;
 
-export const getLocations = (req, res) => Locations.findAndCountAll({ order: [['createdAt', 'DESC']], where: { deleted: false } })
+export const getLocations = (req, res) => Locations.findAndCountAll({ order: [['createdAt', 'DESC']] })
   .then((locations) => {
     res.status(200).send({
       locations,
@@ -32,7 +32,7 @@ export const addLocation = (req, res) => {
   }
 
   return Locations.create({
-    name, male: maleCount, female: femaleCount, ParentLocationId: parent,
+    name: name.toLowerCase(), male: maleCount, female: femaleCount, ParentLocationId: parent,
   })
     .then(location => payloadResponse(req, res, 200, 'Location added successfully', true, location, 'location'));
 };
