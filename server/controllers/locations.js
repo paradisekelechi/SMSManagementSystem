@@ -56,3 +56,9 @@ export const editLocation = (req, res) => {
   return Locations.update(payload, { where: { id } })
     .then(location => payloadResponse(req, res, 200, 'Location updated successfully', true, location, 'location'));
 };
+
+export const deleteLocation = (req, res) => {
+  const { id } = req.params;
+  return Locations.destroy({ where: { id } })
+    .then(location => payloadResponse(req, res, 200, 'Location deleted successfully', true, location, 'location'));
+};
