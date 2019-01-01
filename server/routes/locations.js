@@ -1,6 +1,6 @@
 import express from 'express';
 import {
-  getLocations, addLocation, editLocation,
+  getLocations, addLocation, editLocation, deleteLocation,
 } from '../controllers/locations';
 
 const router = express.Router();
@@ -16,6 +16,11 @@ router.route('/')
 router.route('/:id')
   .put((req, res) => {
     editLocation(req, res);
+  });
+
+router.route('/:id')
+  .delete((req, res) => {
+    deleteLocation(req, res);
   });
 
 export default router;

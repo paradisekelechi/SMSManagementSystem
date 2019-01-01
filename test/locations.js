@@ -85,6 +85,18 @@ describe('Location test', () => {
         });
     });
   });
+  describe('/DELETE Location', () => {
+    it('should delete a location', (done) => {
+      chai.request(server)
+        .delete('/api/locations/1')
+        .end((err, res) => {
+          expect(res).to.be.ok();
+          expect(res.status).to.be.eql(200);
+          expect(res.body.message).to.be.eql('Location deleted successfully');
+          done();
+        });
+    });
+  });
   describe('/PUT Locations', () => {
     it('should edit a location', (done) => {
       chai.request(server)
