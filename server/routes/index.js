@@ -1,8 +1,8 @@
 import dotenv from 'dotenv';
 import express from 'express';
 import bodyParser from 'body-parser';
-import location from './locations';
-import population from './population';
+import contacts from './contacts';
+import messages from './messages';
 
 dotenv.config();
 
@@ -30,7 +30,7 @@ app
     next();
   });
 
-app.use('/api/locations', location);
-app.use('/api/population', population);
+app.use('/api/contacts', contacts);
+app.use('/api/messages', messages);
 
 export default app;

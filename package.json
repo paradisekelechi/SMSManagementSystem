@@ -1,7 +1,7 @@
 {
-  "name": "populationmanagementsystem",
+  "name": "smsmanagementsystem",
   "version": "1.0.0",
-  "description": "population management system listing the population of various locations",
+  "description": "sms management system listing the population of various locations",
   "main": "app.js",
   "scripts": {
     "prebuild": "rm -rf dist/*",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/paradisekelechi/PopulationManagementSystem.git"
+    "url": "git+https://github.com/paradisekelechi/SMSManagementSystem.git"
   },
   "keywords": [
     "population",
@@ -26,9 +26,9 @@
   "author": "Paradise Kelechi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/paradisekelechi/PopulationManagementSystem/issues"
+    "url": "https://github.com/paradisekelechi/SMSManagementSystem/issues"
   },
-  "homepage": "https://github.com/paradisekelechi/PopulationManagementSystem#readme",
+  "homepage": "https://github.com/paradisekelechi/SMSManagementSystem#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",

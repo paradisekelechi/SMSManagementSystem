@@ -9,13 +9,13 @@ app.set('port', port);
 
 app.get('*', (req, res) => {
   res.status(200).send({
-    message: 'Base route for population management application',
+    message: 'Base route for SMS management application',
     success: true,
   });
 });
 
 app.listen(port, () => {
-  Logger('info', `Population management application started and running on port ${port}`);
+  Logger('info', `SMS management application started and running on port ${port}`);
 });
 
 export default app;

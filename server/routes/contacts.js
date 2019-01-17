@@ -1,26 +1,26 @@
 import express from 'express';
 import {
-  getLocations, addLocation, editLocation, deleteLocation,
-} from '../controllers/locations';
+  getContacts, addContact, editContact, deleteContact,
+} from '../controllers/contacts';
 
 const router = express.Router();
 
 router.route('/')
   .get((req, res) => {
-    getLocations(req, res);
+    getContacts(req, res);
   })
   .post((req, res) => {
-    addLocation(req, res);
+    addContact(req, res);
   });
 
 router.route('/:id')
   .put((req, res) => {
-    editLocation(req, res);
+    editContact(req, res);
   });
 
 router.route('/:id')
   .delete((req, res) => {
-    deleteLocation(req, res);
+    deleteContact(req, res);
   });
 
 export default router;
