@@ -1,6 +1,6 @@
 import express from 'express';
 import {
-  getPopulation, getPopulationByLocation
+  getPopulation, getPopulationByLocation,
 } from '../controllers/population';
 
 const router = express.Router();
