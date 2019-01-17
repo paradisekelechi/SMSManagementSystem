@@ -12,7 +12,7 @@ export default {
     dialect: 'postgres',
   },
   production: {
-    use_env_variable: process.env.DATABASE_URL,
+    use_env_variable: process.env.DB_URL,
     dialect: 'postgres',
   },
   test: {
