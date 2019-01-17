@@ -4,8 +4,9 @@
   "description": "population management system listing the population of various locations",
   "main": "app.js",
   "scripts": {
-    "build:assets": "babel server -d dist",
+    "build:assets": "babel -d ./dist ./server",
     "build": "cross-env NODE_ENV=production npm-run-all build:assets reset:db",
+    "prebuild": "rm -rf dist/*",
     "reset:db": "babel-node server/scripts/Reset.js",
     "reset": "cross-env NODE_ENV=development babel-node server/scripts/Reset.js",
     "start:dev": "cross-env NODE_ENV=development nodemon server/index --exec babel-node",
