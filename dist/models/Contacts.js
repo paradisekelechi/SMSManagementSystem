@@ -5,20 +5,22 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = function (sequelize, DataTypes) {
-  var Locations = sequelize.define('Locations', {
+  var Contacts = sequelize.define('Contacts', {
     name: {
       type: DataTypes.STRING,
       allowNull: {
         args: false,
-        msg: 'Location name is required'
+        msg: 'Contact name is required'
       },
       unique: true
     },
-    male: {
-      type: DataTypes.INTEGER
-    },
-    female: {
-      type: DataTypes.INTEGER
+    phone: {
+      type: DataTypes.STRING,
+      allowNull: {
+        args: false,
+        msg: 'Contact phone is required'
+      },
+      unique: true
     },
     deleted: {
       type: DataTypes.BOOLEAN
@@ -33,9 +35,9 @@ exports.default = function (sequelize, DataTypes) {
     freezeTableName: true
   });
 
-  Locations.associate = function (models) {
-    Locations.belongsTo(models.Locations, { as: 'ParentLocationId' });
+  Contacts.associate = function (models) {
+    Contacts.hasMany(models.Messages, { foreignKey: 'id' });
   };
 
-  return Locations;
+  return Contacts;
 };

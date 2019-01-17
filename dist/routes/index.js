@@ -16,13 +16,13 @@ var _bodyParser = require('body-parser');
 
 var _bodyParser2 = _interopRequireDefault(_bodyParser);
 
-var _locations = require('./locations');
+var _contacts = require('./contacts');
 
-var _locations2 = _interopRequireDefault(_locations);
+var _contacts2 = _interopRequireDefault(_contacts);
 
-var _population = require('./population');
+var _messages = require('./messages');
 
-var _population2 = _interopRequireDefault(_population);
+var _messages2 = _interopRequireDefault(_messages);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -43,7 +43,7 @@ app.use(_bodyParser2.default.urlencoded({
   next();
 });
 
-app.use('/api/locations', _locations2.default);
-app.use('/api/population', _population2.default);
+app.use('/api/contacts', _contacts2.default);
+app.use('/api/messages', _messages2.default);
 
 exports.default = app;
